@@ -1,28 +1,37 @@
-# Extract Van Gogh Paintings Code Challenge
+# 👨‍🎨 Van Gogh Paintings
 
-Goal is to extract a list of Van Gogh paintings from the attached Google search results page.
+Coding challenge for [SerpApi](https://serpapi.com). A demo is available at [vangogh.doceazedo.com](https://vangogh.doceazedo.com/paintings) for your convenience. 🎨
 
-![Van Gogh paintings](https://github.com/serpapi/code-challenge/blob/master/files/van-gogh-paintings.png?raw=true "Van Gogh paintings")
+![](files/thumbnail.png)
 
-## Instructions
+## Getting started
 
-This is already fully supported on SerpApi. ([relevant test], [html file], [sample json], and [expected array].)
-Try to come up with your own solution and your own test.
-Extract the painting `name`, `extensions` array (date), and Google `link` in an array.
+To start the server, run:
 
-Fork this repository and make a PR when ready.
+```sh
+$ bin/rails server
+```
 
-Programming language wise, Ruby (with RSpec tests) is strongly suggested but feel free to use whatever you feel like.
+The challenge endpoint will be available at http://127.0.0.1:3000/paintings.
 
-Parse directly the HTML result page ([html file]) in this repository. No extra HTTP requests should be needed for anything.
+To run the test cases, run:
 
-[relevant test]: https://github.com/serpapi/test-knowledge-graph-desktop/blob/master/spec/knowledge_graph_claude_monet_paintings_spec.rb
-[sample json]: https://raw.githubusercontent.com/serpapi/code-challenge/master/files/van-gogh-paintings.json
-[html file]: https://raw.githubusercontent.com/serpapi/code-challenge/master/files/van-gogh-paintings.html
-[expected array]: https://raw.githubusercontent.com/serpapi/code-challenge/master/files/expected-array.json
+```sh
+$ bin/rails test
+```
 
-Add also to your array the painting thumbnails present in the result page file (not the ones where extra requests are needed). 
+> [!TIP]
+> Most relevant parts of the code for reviewing are the [PaintingsController](app/controllers/paintings_controller.rb) and [PaintingsControllerTest](test/controllers/paintings_controller_test.rb).
 
-Test against 2 other similar result pages to make sure it works against different layouts. (Pages that contain the same kind of carrousel. Don't necessarily have to be paintings.)
+## Requirements
 
-The suggested time for this challenge is 4 hours. But, you can take your time and work more on it if you want.
+- [x] Parse HTML from provided Google result page
+- [x] Parse thumbnail images from carrousel
+- [x] Include test cases
+- [x] Return response similar to the [provided JSON](files/expected-array.json)
+
+## Final thoughts
+
+I have limited experience with Rails, so this was a fun way to get some practice! Any feedback on the code would be awesome :)
+
+I couldn't find any other Google search results with that kind of carousel to add to the app. Maybe it's been removed since this challenge is a bit old.
