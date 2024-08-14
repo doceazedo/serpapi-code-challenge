@@ -263,6 +263,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+  nokogiri
   puma (>= 5.0)
   rails (~> 7.2.0)
   rubocop-rails-omakase
